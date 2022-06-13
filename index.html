@@ -10,18 +10,85 @@
   <div class="page">
     <header class="header">
       <a href="#" target="_blank" class="logo logo_place_header"></a>
+      <div class="header__line"></div>
     </header>
     <main class="content">
       <section class="profile">
-        
+        <img src="./images/Avatar.svg" alt="аватар" class="profile__avatar">
+        <div class="profile-info">
+          <h1 class="profile-info__username">Жак-Ив Кусто</h1>
+          <button type="button" class="profile-info__edit-button"></button>
+          <p class="profile-info__bio">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button"></button>
       </section>
       <section class="gallery">
-
+        <ul class="cards">
+          <li>
+            <figure class="cards__item"><img src="./images/gallery1.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Карачаевск</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="cards__item"><img src="./images/gallery2.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Гора Эльбрус</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="cards__item"><img src="./images/gallery3.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Домбай</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="cards__item"><img src="./images/gallery2.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Гора Эльбрус</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="cards__item"><img src="./images/gallery3.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Домбай</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="cards__item"><img src="./images/gallery1.svg" alt="Карачаевск" class="cards__photo">
+              <figcaption class="cards__signature">
+                <p class="cards__text">Карачаево-Ч...</p>
+                <button type="button" class="cards__button-like"></button>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
       </section>
     </main>
     <footer class="footer">
-
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close-button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form action="" class="popup__form">
+          <input type="text" class="popup__input popup__input_username">
+          <input type="text" class="popup__input popup__input_bio">
+          <button type="submit" class="popup__subm-button"></button>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 </html>

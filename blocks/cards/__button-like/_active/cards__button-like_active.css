@@ -1,0 +1,15 @@
+.cards__buttton-like_aktive {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: 30px;
+  right: 30px;
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../../images/button-like-aktive.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000;
+  background-color: #fff;
+  border: none;
+}
