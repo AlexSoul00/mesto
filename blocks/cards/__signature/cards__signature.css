@@ -3,6 +3,9 @@
   padding: 0;
   max-width: 282px;
   min-height: 79px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
+  border-color: #000;
+  border-radius: 0 0 5px 5px;
 }
