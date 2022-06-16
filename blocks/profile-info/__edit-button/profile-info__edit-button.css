@@ -18,6 +18,17 @@
   opacity: .6;
 }
 
+
+@media screen and (max-width: 981px) {
+  .profile-info__edit-button {
+    padding: 8px 7px 7px 8px;
+    width: 7px; 
+    height: 7px; 
+    top: 15px;
+    right: -25px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .profile-info__edit-button {
     padding: 8px 7px 7px 8px;

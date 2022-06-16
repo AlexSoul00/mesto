@@ -8,6 +8,15 @@
   align-items: center;
 }
 
+@media screen and (max-width: 981px) {
+  .profile {
+    max-width: 768px;
+    padding: 0 auto 50px auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .profile {
     padding: 42px 19px 36px 19px;

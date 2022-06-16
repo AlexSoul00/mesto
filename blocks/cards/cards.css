@@ -9,6 +9,13 @@
   grid-row-gap: 20px;
 }
 
+@media screen and (max-width: 981px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(282px, 2fr));
+    grid-template-rows: repeat(3, minmax(361px, 1fr));
+  }
+}
+
 @media screen and (max-width: 767px) {
   .cards {
     grid-template-columns: minmax(282px, 1fr);

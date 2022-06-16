@@ -5,6 +5,13 @@
   background: #000;
 }
 
+@media screen and (max-width: 981px) {
+  .page {
+    max-width: 768px;
+  }
+}
+
+
 @media screen and (max-width: 767px) {
   .page {
     max-width: 320px;

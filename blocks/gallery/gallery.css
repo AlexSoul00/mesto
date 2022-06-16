@@ -5,6 +5,13 @@
   min-height: 744px;
 }
 
+@media screen and (max-width: 981px) {
+  .gallery {
+    max-width: 768px;
+    padding: 0 93px 66px 94px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .gallery {
     max-width: 282px;
