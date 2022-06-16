@@ -1,5 +1,6 @@
 .logo {
   background-image: url(../../images/logo.svg);
+  background-size: contain;
   color: #fff;
   width: 142px;
   height: 33px;
@@ -7,5 +8,13 @@
 
 .logo:hover {
   transition: 2s;
-  opacity: 0.8;
+  opacity: .6;
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    width: 103px;
+    height: 24px;
+    opacity: .2;
+  }
 }

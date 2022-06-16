@@ -3,8 +3,15 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, minmax(282px, 1fr)) ;
+  grid-template-columns: repeat(3, minmax(282px, 1fr));
   grid-template-rows: repeat(2, minmax(361px, 1fr));
   grid-column-gap: 17px;
   grid-row-gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .cards {
+    grid-template-columns: minmax(282px, 1fr);
+    grid-template-rows: repeat(6, minmax(361px, 1fr));
+  }
 }

@@ -6,3 +6,13 @@
   display: flex;
   flex-flow: row wrap;
 }
+
+
+@media screen and (max-width: 767px) {
+  .profile-info {
+    max-width: 282px;
+    min-height: 54px;
+    padding: 26px 0 32px 0;
+    justify-content: center;
+  }
+}

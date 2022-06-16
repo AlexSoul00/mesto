@@ -3,12 +3,19 @@
   padding: 0;
   width: 358px;
   height: 50px;
-  background-image: url(../../../images/popup-Submit-Button.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup__subm-button:hover {
   opacity: .6;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__subm-button {
+    width: 238px;
+    height: 46px;
+  }
 }

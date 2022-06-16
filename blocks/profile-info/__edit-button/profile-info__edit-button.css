@@ -6,7 +6,7 @@
   right: -25px;
   width: 23px;
   height: 23px;
-  background-image: url("../../../images/Edit\ Button.svg");
+  background-image: url("../../../images/edit\ button.png");
   color: #fff;
   background-color: #000;
   background-repeat: no-repeat;
@@ -15,5 +15,15 @@
 }
 
 .profile-info__edit-button:hover {
-  opacity: 0.6;
+  opacity: .6;
+}
+
+@media screen and (max-width: 767px) {
+  .profile-info__edit-button {
+    padding: 8px 7px 7px 8px;
+    width: 7px; 
+    height: 7px; 
+    top: 8px;
+    right: -21px;
+  }
 }
