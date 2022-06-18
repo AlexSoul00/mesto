@@ -26,15 +26,3 @@
     text-align: center;
   }
 }
-
-@media screen and (max-width: 767px) {
-  .profile-info__username {
-    padding-bottom: 7px;
-    padding-left: 15px;
-    max-width: 189px;
-    min-height: 26px;
-    font-size: 27px;
-    line-height: 33px;
-    text-align: center;
-  }
-}

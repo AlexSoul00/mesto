@@ -23,11 +23,3 @@
     background-size: 16px;
   }
 }
-
-@media screen and (max-width: 767px) {
-  .profile__add-button {
-    width: 282px;
-    height: 50px;
-    background-size: 16px;
-  }
-}

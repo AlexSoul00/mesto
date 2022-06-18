@@ -28,13 +28,3 @@
     background-size: 7.5px;
   }
 }
-
-@media screen and (max-width: 767px) {
-  .profile-info__edit-button {
-    width: 17px;
-    height: 17px;
-    top: 8px;
-    right: -11px;
-    background-size: 7.5px;
-  }
-}
