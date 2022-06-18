@@ -18,16 +18,16 @@
 
 @media screen and (max-width: 981px) {
   .profile__add-button {
-    width: 6px;
-    height: 6px;
-    padding: 24px 144px 24px 136px;
+    width: 282px;
+    height: 50px;
+    background-size: 16px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .profile__add-button {
-    width: 6px;
-    height: 6px;
-    padding: 24px 144px 24px 136px;
+    width: 282px;
+    height: 50px;
+    background-size: 16px;
   }
 }

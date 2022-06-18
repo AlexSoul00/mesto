@@ -12,7 +12,7 @@
   .profile-info {
     max-width: 282px;
     min-height: 54px;
-    padding: 25px 19px 36px 19px;
+    padding: 25px 0 33px 0;
     justify-content: center;
   }
 }
@@ -21,7 +21,7 @@
   .profile-info {
     max-width: 282px;
     min-height: 54px;
-    padding: 25px 19px 36px 19px;
+    padding: 26px 0 33px 0;
     justify-content: center;
   }
 }

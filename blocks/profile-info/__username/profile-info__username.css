@@ -17,7 +17,8 @@
 
 @media screen and (max-width: 981px) {
   .profile-info__username {
-    padding-bottom: 8px;
+    padding-bottom: 7px;
+    padding-left: 15px;
     max-width: 189px;
     min-height: 26px;
     font-size: 27px;
@@ -28,7 +29,8 @@
 
 @media screen and (max-width: 767px) {
   .profile-info__username {
-    padding-bottom: 8px;
+    padding-bottom: 7px;
+    padding-left: 15px;
     max-width: 189px;
     min-height: 26px;
     font-size: 27px;

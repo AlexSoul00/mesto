@@ -21,20 +21,20 @@
 
 @media screen and (max-width: 981px) {
   .profile-info__edit-button {
-    padding: 8px 7px 7px 8px;
-    width: 7px;
-    height: 7px;
-    top: 15px;
-    right: -25px;
+    width: 17px;
+    height: 17px;
+    top: 8px;
+    right: -11px;
+    background-size: 7.5px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .profile-info__edit-button {
-    padding: 8px 7px 7px 8px;
-    width: 7px;
-    height: 7px;
+    width: 17px;
+    height: 17px;
     top: 8px;
-    right: -21px;
+    right: -11px;
+    background-size: 7.5px;
   }
 }
