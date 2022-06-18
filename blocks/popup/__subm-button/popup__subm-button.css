@@ -1,5 +1,5 @@
 .popup__subm-button {
-  margin: 48px 0 0 0;
+  margin: 49px 0 0 0;
   padding: 0;
   width: 358px;
   height: 50px;
@@ -14,6 +14,8 @@
   text-align: center;
   color: #fff;
   background-color: #000;
+  border-radius: 2px;
+  border-color: #000;
 }
 
 .popup__subm-button:hover {
@@ -22,6 +24,7 @@
 
 @media screen and (max-width: 767px) {
   .popup__subm-button {
+    margin-top: 45px;
     width: 238px;
     height: 46px;
     font-size: 14px;

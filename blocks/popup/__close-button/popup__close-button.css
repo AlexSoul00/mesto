@@ -11,6 +11,7 @@
   background-image: url(../../../images/Popup-Close-button.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   border: none;
 }
 
@@ -22,7 +23,7 @@
   .popup__close-button {
     width: 20px;
     height: 20px;
-    top: 87px;
-    right: 19px;
+    top: -36px;
+    right: 0;
   }
 }
