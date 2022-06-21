@@ -5,9 +5,8 @@
   min-height: 74px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgba(84, 84, 84, .7);;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
-
 
 @media screen and (max-width: 981px) {
   .header {
@@ -19,6 +18,6 @@
   .header {
     max-width: 320px;
     min-height: 56px;
-    padding: 28px 0 0 0;
+    padding-top: 28px;
   }
 }
