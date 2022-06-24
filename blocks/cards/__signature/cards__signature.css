@@ -5,7 +5,5 @@
   min-height: 79px;
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
-  border-color: #000;
   border-radius: 0 0 10px 10px;
 }
