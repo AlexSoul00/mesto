@@ -88,7 +88,10 @@ addButton.addEventListener('click', function() {
   openPopup (popup)
   popupTitleElement.textContent = 'Новое место';
   popupSubmButtonElement.textContent = 'Создать';
-  document.querySelector('.popup__input').Placeholder = 'test';
+  document.querySelector('[name="username"]').value = "";
+  document.querySelector('[name="bio"]').value = "";
+  document.querySelector('[name="username"]').placeholder = 'Название';
+  document.querySelector('[name="bio"]').placeholder = 'Ссылка на картинку';
 })
 
 closePopupButton.addEventListener('click', function() {
