@@ -29,8 +29,6 @@ const popup = document.querySelector('.popup')
 const closePopupButton = document.querySelector('.popup__close-button')
 const usernameFieldElement = document.querySelector('.popup__input_username')
 const usernameProfileElement = document.querySelector('.profile-info__username')
-// const cardNameFieldElement = 
-// const cardLinkFieldElement = 
 const bioFieldElement = document.querySelector('.popup__input_bio')
 const bioProfileElement = document.querySelector('.profile-info__bio')
 const formElement = document.querySelector('.popup__form')
@@ -85,14 +83,14 @@ editButton.addEventListener('click', function() {
 })
 
 addButton.addEventListener('click', function() {
+  formElement.reset();
   openPopup (popup)
   popupTitleElement.textContent = 'Новое место';
   popupSubmButtonElement.textContent = 'Создать';
-  document.querySelector('[name="username"]').value = "";
-  document.querySelector('[name="bio"]').value = "";
   document.querySelector('[name="username"]').placeholder = 'Название';
   document.querySelector('[name="bio"]').placeholder = 'Ссылка на картинку';
 })
+
 
 closePopupButton.addEventListener('click', function() {
   closePopup (popup)
