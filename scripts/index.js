@@ -28,6 +28,7 @@ const editButton = document.querySelector('.profile-info__edit-button')
 const addButton = document.querySelector('.profile__add-button')
 const profilePopup = document.querySelector('.popup_type_profile')
 const addcardPopup = document.querySelector('.popup_type_addcard')
+
 const profileClosePopupButton = document.querySelector('.popup__close-button_type_profile')
 const addcardClosePopupButton = document.querySelector('.popup__close-button_type_addcard')
 const usernameProfileElement = document.querySelector('.profile-info__username')
@@ -38,14 +39,9 @@ const cardnameFieldElement = document.querySelector('.popup__input_cardname')
 const cardlinkFieldElement = document.querySelector('.popup__input_cardlink')
 const popupTitleElement = document.querySelector('.popup__title')
 const formElement = document.querySelector('.popup__form')
-
-
 const profileFormElement = document.querySelector('.popup__form_type_profile')
 const addcardFormElement = document.querySelector('.popup__form_type_addcard')
-
 const popupSubmButtonElement = document.querySelector('.popup__subm-button')
-
-
 const cardsTemplateElement = document.querySelector('.cards__template')
 const cardsListElement = document.querySelector('.cards');
 const getCardByEvent = e => e.currentTarget.closest('.cards__card');
@@ -82,9 +78,20 @@ const deleteCard = e => {
 
   card.remove();
 };
-const handleSubmitForm = e => {
+const handleCardSubmit = e => {
   e.preventDefault();
+  const nameValue = cardnameFieldElement.value
+  const linkValue = cardlinkFieldElement.value
+  addCard(nameValue, linkValue);
+  closePopup(addcardPopup);
+  addcardFormElement.reset();
 };
+const handleProfileSubmit = e => {
+  e.preventDefault();
+  usernameProfileElement.textContent = usernameFieldElement.value
+  bioProfileElement.textContent = bioFieldElement.value
+  closePopup (profilePopup)
+}
 
 initialCards.forEach(card => addCard(card.name, card.link));
 
@@ -111,27 +118,11 @@ addcardClosePopupButton.addEventListener('click', function() {
   closePopup (addcardPopup)
 });
 
-formElement.addEventListener('submit', function(event) {
-  event.preventDefault()
-  {
-  usernameProfileElement.textContent = usernameFieldElement.value
-  bioProfileElement.textContent = bioFieldElement.value
-  closePopup (profilePopup)
-  }
-  }
-)
+profileFormElement.addEventListener('submit', handleProfileSubmit);
 
-addcardFormElement.addEventListener('submit', function(event) {
-  event.preventDefault()
-  {
-    const nameValue = cardnameFieldElement.value
-    const linkValue = cardlinkFieldElement.value
-    addCard(nameValue, linkValue);
-    closePopup(addcardPopup);
-    addcardFormElement.reset();
-  }
-}
-)
+addcardFormElement.addEventListener('submit', handleCardSubmit);
+
+
 
 
 function openPopupPhoto(popupPhotoElement) {
