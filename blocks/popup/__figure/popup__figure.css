@@ -1,21 +1,5 @@
 .popup__figure {
   margin: 0;
   padding: 0;
-  top: 90px;
-  position: fixed;
-  min-width: 433px;
-  min-height: 562px;
-  max-width: 75vw;
-  max-height: 75vh;
   background-color: transparent;
-}
-
-@media screen and (max-width: 981px) {
-  .popup__figure {
-    top: 136px;
-    left: 40px;
-    right: 40px;
-    min-width: 240px;
-    min-height: 299px;
-  }
 }
