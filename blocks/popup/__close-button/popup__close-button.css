@@ -13,6 +13,7 @@
   background-position: center;
   background-size: contain;
   border: none;
+  transition: opacity .3s ease-in-out;
 }
 
 .popup__close-button:hover {
