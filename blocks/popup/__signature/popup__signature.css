@@ -8,3 +8,9 @@
   max-width: 291px;
   min-height: 12px;
 }
+
+@media screen and (max-width: 981px) {
+  .popup__signature {
+    max-width: 240px;
+  }
+}

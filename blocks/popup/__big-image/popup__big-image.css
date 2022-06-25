@@ -1,8 +1,17 @@
 .popup__big-image {
   margin: 0;
   padding: 0;
+  min-width: 433px;
+  min-height: 562px;
   max-width: 75vw;
   max-height: 75vh;
   display: block;
   object-fit: contain;
+}
+
+@media screen and (max-width: 981px) {
+  .popup__big-image {
+    min-width: 240px;
+    min-height: 299px;
+  }
 }

@@ -49,14 +49,3 @@
 @import url(../blocks/popup/__signature/popup__signature.css);
 @import url(../blocks/popup/__close-button/__type/popup__close-button_type_img-increase.css);
 @import url(../blocks/popup/__image-text/popup__image-text.css);
-
-
-
-
-@import url(../blocks/popupphoto/popupphoto.css);
-@import url(../blocks/popupphoto/__card/popupphoto__card.css);
-@import url(../blocks/popupphoto/__close-button/popupphoto__close-button.css);
-@import url(../blocks/popupphoto/__text/popupphoto__text.css);
-@import url(../blocks/popupphoto/_aktive/popupphoto_aktive.css);
-@import url(../blocks/popupphoto/__signature/popupphoto__signature.css);
-@import url(../blocks/popupphoto/__img/popupphoto__img.css);
