@@ -48,23 +48,22 @@ const getCardByEvent = e => e.currentTarget.closest('.cards__card');
 const popupImg = popupImage.querySelector('.popup__big-image')
 const popupText = popupImage.querySelector('.popup__image-text')
 
-function openPopupImage(evt) {
-  popupImg.src = evt.querySelector('.cards__photo').src
-  popupText.textContent = evt.querySelector('.cards__text').textContent
-  popupImg.alt = evt.querySelector('.cards__text').textContent
-  openPopup (popupImage)
-}
+function openPopupImage(name, link) { 
+  popupImg.src = link; 
+  popupText.textContent = name; 
+  popupImg.alt = name; 
+  openPopup (popupImage) 
+}  
 const createCard = (nameValue, linkValue) => {
   const card = cardsTemplateElement.content
   .querySelector('.cards__card')
   .cloneNode(true);
   const cardText = card.querySelector('.cards__text')
   const cardPhoto = card.querySelector('.cards__photo')
-  const cardAlt = card.querySelector('.cards__photo')
   cardText.textContent = nameValue;
   cardPhoto.src = linkValue;
-  cardAlt.alt  = nameValue;
-  card.querySelector('.cards__photo').addEventListener('click', evt => openPopupImage (evt.target.closest('.cards__card')));
+  cardPhoto.alt  = nameValue;
+  cardPhoto.addEventListener('click',()  => openPopupImage(nameValue, linkValue));
   card.querySelector('.cards__button-delete').addEventListener('click', deleteCard);
   card.querySelector('.cards__button-like').addEventListener('click', function (evt) {
     evt.target.classList.toggle('cards__button-like_aktive')
@@ -86,7 +85,6 @@ const handleCardSubmit = e => {x
   const linkValue = cardlinkFieldElement.value
   addCard(nameValue, linkValue);
   closePopup(popupAddCard);
-  formElementAddCard.reset();
 };
 const handleProfileSubmit = e => {
   e.preventDefault();
