@@ -25,22 +25,34 @@ const initialCards = [
   }
 ];
 const editButton = document.querySelector('.profile-info__edit-button')
-const popup = document.querySelector('.popup')
-const popupPhoto = document.querySelector('.popupphoto')
-const closePopupButton = document.querySelector('.popup__close-button')
-const closePopupPhotoButton = document.querySelector('.popupphoto__close-button')
-const usernameFieldElement = document.querySelector('.popup__input_username')
-const usernameProfileElement = document.querySelector('.profile-info__username')
-const bioFieldElement = document.querySelector('.popup__input_bio')
-const bioProfileElement = document.querySelector('.profile-info__bio')
-const formElement = document.querySelector('.popup__form')
 const addButton = document.querySelector('.profile__add-button')
+const profilePopup = document.querySelector('.popup_type_profile')
+const addcardPopup = document.querySelector('.popup_type_addcard')
+const profileClosePopupButton = document.querySelector('.popup__close-button_type_profile')
+const addcardClosePopupButton = document.querySelector('.popup__close-button_type_addcard')
+const usernameProfileElement = document.querySelector('.profile-info__username')
+const bioProfileElement = document.querySelector('.profile-info__bio')
+const usernameFieldElement = document.querySelector('.popup__input_username')
+const bioFieldElement = document.querySelector('.popup__input_bio')
+const cardnameFieldElement = document.querySelector('.popup__input_cardname')
+const cardlinkFieldElement = document.querySelector('.popup__input_cardlink')
 const popupTitleElement = document.querySelector('.popup__title')
+const formElement = document.querySelector('.popup__form')
+
+
+const profileFormElement = document.querySelector('.popup__form_type_profile')
+const addcardFormElement = document.querySelector('.popup__form_type_addcard')
+
 const popupSubmButtonElement = document.querySelector('.popup__subm-button')
+
+
 const cardsTemplateElement = document.querySelector('.cards__template')
 const cardsListElement = document.querySelector('.cards');
 const getCardByEvent = e => e.currentTarget.closest('.cards__card');
 
+
+const popupPhoto = document.querySelector('.popupphoto')
+const closePopupPhotoButton = document.querySelector('.popupphoto__close-button')
 
 function openPopupWindow(evt) {
   popupPhoto.querySelector('.popupphoto__img').src = evt.querySelector('.cards__photo').src
@@ -70,6 +82,9 @@ const deleteCard = e => {
 
   card.remove();
 };
+const handleSubmitForm = e => {
+  e.preventDefault();
+};
 
 initialCards.forEach(card => addCard(card.name, card.link));
 
@@ -79,47 +94,52 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_aktive')
 };
+
+editButton.addEventListener('click', function() {
+  openPopup (profilePopup)
+  usernameFieldElement.value = usernameProfileElement.textContent
+  bioFieldElement.value = bioProfileElement.textContent
+});
+addButton.addEventListener('click', function() {
+  formElement.reset();
+  openPopup (addcardPopup)
+});
+profileClosePopupButton.addEventListener('click', function() {
+  closePopup (profilePopup)
+});
+addcardClosePopupButton.addEventListener('click', function() {
+  closePopup (addcardPopup)
+});
+
+formElement.addEventListener('submit', function(event) {
+  event.preventDefault()
+  {
+  usernameProfileElement.textContent = usernameFieldElement.value
+  bioProfileElement.textContent = bioFieldElement.value
+  closePopup (profilePopup)
+  }
+  }
+)
+
+addcardFormElement.addEventListener('submit', function(event) {
+  event.preventDefault()
+  {
+    const nameValue = cardnameFieldElement.value
+    const linkValue = cardlinkFieldElement.value
+    addCard(nameValue, linkValue);
+    closePopup(addcardPopup);
+    addcardFormElement.reset();
+  }
+}
+)
+
+
 function openPopupPhoto(popupPhotoElement) {
   popupPhotoElement.classList.add('popupphoto_aktive')
 };
 function closePopupPhoto(popupPhotoElement) {
   popupPhotoElement.classList.remove('popupphoto_aktive')
 };
-
-editButton.addEventListener('click', function() {
-  openPopup (popup)
-  popupTitleElement.textContent =  'Редактировать профиль';
-  popupSubmButtonElement.textContent = 'Сохранить';
-  usernameFieldElement.value = usernameProfileElement.textContent
-  bioFieldElement.value = bioProfileElement.textContent
-})
-addButton.addEventListener('click', function() {
-  formElement.reset();
-  openPopup (popup)
-  popupTitleElement.textContent = 'Новое место';
-  popupSubmButtonElement.textContent = 'Создать';
-  document.querySelector('[name="username"]').placeholder = 'Название';
-  document.querySelector('[name="bio"]').placeholder = 'Ссылка на картинку';
-})
-closePopupButton.addEventListener('click', function() {
-  closePopup (popup)
-});
 closePopupPhotoButton.addEventListener('click', function() {
   closePopupPhoto (popupPhoto)
 });
-formElement.addEventListener('submit', function(event) {
-  event.preventDefault()
-  if (popupTitleElement.textContent === 'Редактировать профиль'){
-  usernameProfileElement.textContent = usernameFieldElement.value
-  bioProfileElement.textContent = bioFieldElement.value
-  closePopup (popup)
-  }
-  else {
-    const nameValue = usernameFieldElement.value
-    const linkValue = bioFieldElement.value 
-    addCard(nameValue, linkValue);
-    closePopup(popup);
-    formElement.reset();
-  }
-  }
-)
