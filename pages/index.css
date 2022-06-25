@@ -42,6 +42,14 @@
 @import url(../blocks/popup/__close-button/__type/popup__close-button_type_addcard.css);
 @import url(../blocks/popup/__form/_type/popup__form_type_profile.css);
 @import url(../blocks/popup/__form/_type/popup__form_type_addcard.css);
+@import url(../blocks/popup/_type/popup_type_img-increase.css);
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__big-image/popup__big-image.css);
+@import url(../blocks/popup/__signature/popup__signature.css);
+@import url(../blocks/popup/__close-button/__type/popup__close-button_type_img-increase.css);
+@import url(../blocks/popup/__image-text/popup__image-text.css);
+
 
 
 

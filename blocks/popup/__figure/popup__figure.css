@@ -1,0 +1,18 @@
+.popup__figure {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  max-width: 75vw;
+  max-height: 75vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 981px) {
+  .popup__figure {
+    top: 136px;
+  }
+}
