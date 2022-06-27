@@ -34,8 +34,8 @@
         <button type="button" class="popup__close-button popup__close-button_type_profile"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
         <form action="#" class="popup__form popup__form_type_profile">
-          <input type="text" value="" name="name" class="popup__input popup__input_username">
-          <input type="text" value="" name="about" class="popup__input popup__input_bio">
+          <input type="text" value="" name="name" class="popup__input popup__input_username" placeholder="Имя" minlength="2" maxlength="40">
+          <input type="text" value="" name="about" class="popup__input popup__input_bio" placeholder="О себе" minlength="2" maxlength="200">
           <button type="submit" class="popup__subm-button">Сохранить</button>
         </form>
       </div>
@@ -45,7 +45,7 @@
         <button type="button" class="popup__close-button popup__close-button_type_addcard"></button>
         <h3 class="popup__title">Новое место</h3>
         <form action="#" class="popup__form popup__form_type_addcard">
-          <input type="text" value="" name="name" class="popup__input popup__input_cardname" placeholder ="Название">
+          <input type="text" value="" name="name" class="popup__input popup__input_cardname" placeholder="Название">
           <input type="url" value="" name="link" class="popup__input popup__input_cardlink" placeholder="Ссылка на картинку">
           <button type="submit" class="popup__subm-button">Создать</button>
         </form>
