@@ -31,7 +31,12 @@ const toggleButtontate = (buttonElement, inputList) => {
   } else {
     buttonElement.disabled = false;
   }
-}
+};
+
+// const checkBothInputValidity = (formElement) => {
+//   const firstInput = formElement.querySelector
+//   const secondInput =   
+// }
 
 const setEventListeners = (formElement) => {
   // formElement.addEventListener('submit', (evt) {
@@ -42,9 +47,11 @@ const setEventListeners = (formElement) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement);
+      // checkBothInputValidity (formElement); проверка двух полей 
       toggleButtontate(buttonElement, inputList); //поменять название?
-    })
+    });
   })
+  toggleButtontate(buttonElement, inputList);
 }
 
 const enableValidation = () => {
