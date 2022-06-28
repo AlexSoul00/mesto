@@ -1,4 +1,4 @@
-.popup__subm-button {
+.popup__button {
   margin: 49px 0 0 0;
   padding: 0;
   width: 358px;
@@ -19,12 +19,12 @@
   transition: opacity .3s ease-in-out;
 }
 
-.popup__subm-button:hover {
+.popup__button:hover {
   opacity: .6;
   cursor: pointer;
 }
 
-.popup__subm-button:disabled {
+.popup__button:disabled {
   color: #000;
   border: 1px solid;
   background-color: #fff;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 981px) {
-  .popup__subm-button {
+  .popup__button {
     margin-top: 45px;
     width: 238px;
     height: 46px;

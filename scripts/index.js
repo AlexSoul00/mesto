@@ -48,8 +48,6 @@ const getCardByEvent = e => e.currentTarget.closest('.cards__card');
 const popupImg = popupImage.querySelector('.popup__big-image')
 const popupText = popupImage.querySelector('.popup__image-text')
 
-// enableValidation();
-
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

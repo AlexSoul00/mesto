@@ -35,11 +35,11 @@ const toggleButtontate = (buttonElement, inputList) => {
 
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
-  const buttonElement = formElement.querySelector('.popup__subm-button');
+  const buttonElement = formElement.querySelector('.popup__button');
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement);
-      toggleButtontate(buttonElement, inputList);
+      toggleButtontate(buttonElement, inputList); 
     });
   })
   toggleButtontate(buttonElement, inputList);
