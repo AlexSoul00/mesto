@@ -119,13 +119,14 @@ function closePopup(popupElement) {
 function handleOverlay(evt) {
   if (evt.target.classList.contains('popup')) {
     evt.target.classList.remove('popup_opened')
+    formElementAddCard.reset();
   }
 };
 
 function handlerEscButton(evt) {
   if (evt.key=== 'Escape') {
     const openedPopup = document.querySelector('.popup_opened')
-    closePopup(openedPopup);
+    closePopup(openedPopup);;
   }
 };
 
@@ -142,6 +143,7 @@ buttonClosePopupProfile.addEventListener('click', function() {
 });
 buttonClosePopupAddCard.addEventListener('click', function() {
   closePopup (popupAddCard)
+  formElementAddCard.reset();
 });
 buttonClosePopupImage.addEventListener('click', function(){
   closePopup (popupImage)

@@ -4,7 +4,6 @@ const hideInputError = (formElement, inputElement, config) => {
   inputElement.classList.remove(inputErrorClass);
   errorElement.textContent = '';
   errorElement.classList.remove(errorClass);
-  console.log(errorClass);
 }
 
 const showInputError = (formElement, inputElement, config) => {
@@ -28,7 +27,7 @@ const hasInvalidInput = (inputList) => {
   return inputList.some(inputElement => !inputElement.validity.valid);
 }
 
-const toggleButtontate = (buttonElement, inputList) => {
+const toggleButtonSubm = (buttonElement, inputList) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.disabled = true;
   } else {
@@ -46,10 +45,10 @@ const setEventListeners = (formElement, config) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement, restConfig);
-      toggleButtontate(buttonElement, inputList); 
+      toggleButtonSubm(buttonElement, inputList); 
     });
   })
-  toggleButtontate(buttonElement, inputList);
+  toggleButtonSubm(buttonElement, inputList);
 };
 
 const enableValidation = (config) => {
