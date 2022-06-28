@@ -2,14 +2,14 @@ const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.remove('popup__input_type_error');
   errorElement.textContent = '';
-  errorElement.classList.remove('popup__input-error_active');
+  errorElement.classList.remove('popup__error_visible');
 }
 
 const showInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.add('popup__input_type_error');
   errorElement.textContent = inputElement.validationMessage;
-  errorElement.classList.add('popup__input-error_active');
+  errorElement.classList.add('popup__error_visible');
 }
 
 const checkInputValidity = (formElement, inputElement) => {
@@ -33,22 +33,13 @@ const toggleButtontate = (buttonElement, inputList) => {
   }
 };
 
-// const checkBothInputValidity = (formElement) => {
-//   const firstInput = formElement.querySelector
-//   const secondInput =   
-// }
-
 const setEventListeners = (formElement) => {
-  // formElement.addEventListener('submit', (evt) {
-  //   evt.preventDefault();
-  // });
   const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
   const buttonElement = formElement.querySelector('.popup__subm-button');
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement);
-      // checkBothInputValidity (formElement); проверка двух полей 
-      toggleButtontate(buttonElement, inputList); //поменять название?
+      toggleButtontate(buttonElement, inputList);
     });
   })
   toggleButtontate(buttonElement, inputList);

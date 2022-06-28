@@ -48,7 +48,16 @@ const getCardByEvent = e => e.currentTarget.closest('.cards__card');
 const popupImg = popupImage.querySelector('.popup__big-image')
 const popupText = popupImage.querySelector('.popup__image-text')
 
-enableValidation();
+// enableValidation();
+
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+}); 
 
 function openPopupImage(name, link) { 
   popupImg.src = link; 
@@ -126,5 +135,3 @@ buttonClosePopupImage.addEventListener('click', function(){
 formElementProfile.addEventListener('submit', handleProfileSubmit);
 
 formElementAddCard.addEventListener('submit', handleCardSubmit);
-
-
