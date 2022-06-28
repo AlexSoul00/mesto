@@ -1,23 +1,25 @@
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, config) => {
+  const { inputErrorClass, errorActiveClass} = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.remove('popup__input_type_error');
+  inputElement.classList.remove(inputErrorClass);
   errorElement.textContent = '';
-  errorElement.classList.remove('popup__error_visible');
+  errorElement.classList.remove(errorActiveClass);
 }
 
-const showInputError = (formElement, inputElement) => {
+const showInputError = (formElement, inputElement, config) => {
+  const { inputErrorClass, errorActiveClass} = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  inputElement.classList.add('popup__input_type_error');
+  inputElement.classList.add(inputErrorClass);
   errorElement.textContent = inputElement.validationMessage;
-  errorElement.classList.add('popup__error_visible');
+  errorElement.classList.add(errorActiveClass);
 }
 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, config) => {
   if (inputElement.validity.valid) {
-    hideInputError(formElement, inputElement);
+    hideInputError(formElement, inputElement, config);
   }
   else {
-    showInputError(formElement, inputElement);
+    showInputError(formElement, inputElement, config);
   }
 }
 
@@ -33,21 +35,26 @@ const toggleButtontate = (buttonElement, inputList) => {
   }
 };
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
-  const buttonElement = formElement.querySelector('.popup__button');
+const setEventListeners = (formElement, config) => {
+  const { inputSelector, submitButtonSelector, ...restConfig} = config;
+  formElement.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+  });
+  const inputList = Array.from(formElement.querySelectorAll(inputSelector));
+  const buttonElement = formElement.querySelector(submitButtonSelector);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
-      checkInputValidity(formElement, inputElement);
+      checkInputValidity(formElement, inputElement, restConfig);
       toggleButtontate(buttonElement, inputList); 
     });
   })
   toggleButtontate(buttonElement, inputList);
-}
+};
 
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll('.popup__form'));
+const enableValidation = (config) => {
+  const {formSelector, ...restConfig} = config
+  const formList = Array.from(document.querySelectorAll(formSelector));
   formList.forEach(formElement => {
-    setEventListeners(formElement);
+    setEventListeners(formElement, config);
   })
 };
