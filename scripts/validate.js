@@ -1,17 +1,18 @@
 const hideInputError = (formElement, inputElement, config) => {
-  const { inputErrorClass, errorActiveClass} = config;
+  const { inputErrorClass, errorClass} = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.remove(inputErrorClass);
   errorElement.textContent = '';
-  errorElement.classList.remove(errorActiveClass);
+  errorElement.classList.remove(errorClass);
+  console.log(errorClass);
 }
 
 const showInputError = (formElement, inputElement, config) => {
-  const { inputErrorClass, errorActiveClass} = config;
+  const { inputErrorClass, errorClass} = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.add(inputErrorClass);
   errorElement.textContent = inputElement.validationMessage;
-  errorElement.classList.add(errorActiveClass);
+  errorElement.classList.add(errorClass);
 }
 
 const checkInputValidity = (formElement, inputElement, config) => {

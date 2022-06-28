@@ -41,7 +41,7 @@ const cardlinkFieldElement = document.querySelector('.popup__input_cardlink')
 const popupTitleElement = document.querySelector('.popup__title')
 const formElementProfile = document.querySelector('.popup__form_type_profile')
 const formElementAddCard = document.querySelector('.popup__form_type_addcard')
-const popupSubmButtonElement = document.querySelector('.popup__subm-button')
+const popupSubmButtonElement = document.querySelector('.popup__button')
 const cardsTemplateElement = document.querySelector('.cards__template')
 const cardsListElement = document.querySelector('.cards');
 const getCardByEvent = e => e.currentTarget.closest('.cards__card');
@@ -88,12 +88,13 @@ const deleteCard = e => {
 
   card.remove();
 };
-const handleCardSubmit = e => {x
+const handleCardSubmit = e => {
   e.preventDefault();
   const nameValue = cardnameFieldElement.value
   const linkValue = cardlinkFieldElement.value
   addCard(nameValue, linkValue);
   closePopup(popupAddCard);
+  formElementAddCard.reset();
 };
 const handleProfileSubmit = e => {
   e.preventDefault();
@@ -134,7 +135,6 @@ buttonEdit.addEventListener('click', function() {
   bioFieldElement.value = bioProfileElement.textContent
 });
 buttonAdd.addEventListener('click', function() {
-  formElementAddCard.reset();
   openPopup (popupAddCard)
 });
 buttonClosePopupProfile.addEventListener('click', function() {
