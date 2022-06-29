@@ -106,27 +106,26 @@ initialCards.forEach(card => addCard(card.name, card.link));
 
 function openPopup(popupElement) {
   popupElement.classList.add('popup_opened')
-  document.addEventListener('click', handleOverlay)
+  document.addEventListener('mousedown', handleOverlay)
   document.addEventListener('keydown', handlerEscButton)
 };
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_opened')
-  document.removeEventListener('click', handleOverlay)
+  document.removeEventListener('mousedown', handleOverlay)
   document.removeEventListener('keydown', handlerEscButton)
 };
 
 function handleOverlay(evt) {
   if (evt.target.classList.contains('popup')) {
-    evt.target.classList.remove('popup_opened')
+    closePopup(evt.target);
     formElementAddCard.reset();
   }
 };
 
 function handlerEscButton(evt) {
   if (evt.key=== 'Escape') {
-    console.log(1234);
     const openedPopup = document.querySelector('.popup_opened')
-    closePopup(openedPopup);;
+    closePopup(openedPopup);
   }
 };
 
