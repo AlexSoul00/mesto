@@ -5,7 +5,13 @@
   min-height: 18px;
 }
 
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 1279px) {
+  .footer {
+    padding: 0 612px 36px 50px;
+  }
+}
+
+@media screen and (max-width: 979px) {
   .footer {
     max-width: 282px;
     min-height: 14px;

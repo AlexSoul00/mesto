@@ -5,7 +5,14 @@
   min-height: 744px;
 }
 
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 1279px) {
+  .gallery {
+    max-width: 880px;
+    padding: 0 50px 66px 50px;
+  }
+}
+
+@media screen and (max-width: 979px) {
   .gallery {
     max-width: 768px;
     padding: 0 93px 66px 94px;

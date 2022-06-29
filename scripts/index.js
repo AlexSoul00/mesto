@@ -41,21 +41,12 @@ const cardlinkFieldElement = document.querySelector('.popup__input_cardlink')
 const popupTitleElement = document.querySelector('.popup__title')
 const formElementProfile = document.querySelector('.popup__form_type_profile')
 const formElementAddCard = document.querySelector('.popup__form_type_addcard')
-const popupSubmButtonElement = document.querySelector('.popup__button')
+const popupSubmButtonElement = document.querySelector('.popup__subm-button')
 const cardsTemplateElement = document.querySelector('.cards__template')
 const cardsListElement = document.querySelector('.cards');
 const getCardByEvent = e => e.currentTarget.closest('.cards__card');
 const popupImg = popupImage.querySelector('.popup__big-image')
 const popupText = popupImage.querySelector('.popup__image-text')
-
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-}); 
 
 function openPopupImage(name, link) { 
   popupImg.src = link; 
@@ -88,13 +79,12 @@ const deleteCard = e => {
 
   card.remove();
 };
-const handleCardSubmit = e => {
+const handleCardSubmit = e => {x
   e.preventDefault();
   const nameValue = cardnameFieldElement.value
   const linkValue = cardlinkFieldElement.value
   addCard(nameValue, linkValue);
   closePopup(popupAddCard);
-  formElementAddCard.reset();
 };
 const handleProfileSubmit = e => {
   e.preventDefault();
@@ -107,27 +97,9 @@ initialCards.forEach(card => addCard(card.name, card.link));
 
 function openPopup(popupElement) {
   popupElement.classList.add('popup_opened')
-  document.addEventListener('click', handleOverlay)
-  document.addEventListener('keydown', handlerEscButton)
 };
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_opened')
-  document.removeEventListener('click', handleOverlay)
-  document.removeEventListener('keydown', handlerEscButton)
-};
-
-function handleOverlay(evt) {
-  if (evt.target.classList.contains('popup')) {
-    evt.target.classList.remove('popup_opened')
-    formElementAddCard.reset();
-  }
-};
-
-function handlerEscButton(evt) {
-  if (evt.key=== 'Escape') {
-    const openedPopup = document.querySelector('.popup_opened')
-    closePopup(openedPopup);;
-  }
 };
 
 buttonEdit.addEventListener('click', function() {
@@ -136,6 +108,7 @@ buttonEdit.addEventListener('click', function() {
   bioFieldElement.value = bioProfileElement.textContent
 });
 buttonAdd.addEventListener('click', function() {
+  formElementAddCard.reset();
   openPopup (popupAddCard)
 });
 buttonClosePopupProfile.addEventListener('click', function() {
@@ -143,7 +116,6 @@ buttonClosePopupProfile.addEventListener('click', function() {
 });
 buttonClosePopupAddCard.addEventListener('click', function() {
   closePopup (popupAddCard)
-  formElementAddCard.reset();
 });
 buttonClosePopupImage.addEventListener('click', function(){
   closePopup (popupImage)
@@ -152,3 +124,5 @@ buttonClosePopupImage.addEventListener('click', function(){
 formElementProfile.addEventListener('submit', handleProfileSubmit);
 
 formElementAddCard.addEventListener('submit', handleCardSubmit);
+
+
