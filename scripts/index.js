@@ -94,6 +94,7 @@ const handleCardSubmit = e => {x
   const linkValue = cardlinkFieldElement.value
   addCard(nameValue, linkValue);
   closePopup(popupAddCard);
+  toggleButtonSubm(buttonElement, inputList); 
 };
 const handleProfileSubmit = e => {
   e.preventDefault();
