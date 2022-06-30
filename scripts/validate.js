@@ -27,11 +27,19 @@ const hasInvalidInput = (inputList) => {
   return inputList.some(inputElement => !inputElement.validity.valid);
 }
 
+const setDisableButton = (buttonElement) => {
+  buttonElement.disabled = true;
+}
+
+const setEnableButton = (buttonElement) => {
+  buttonElement.disabled = false;
+}
+
 const toggleButtonSubm = (buttonElement, inputList) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true;
+    setDisableButton(buttonElement);
   } else {
-    buttonElement.disabled = false;
+    setEnableButton(buttonElement);
   }
 };
 
