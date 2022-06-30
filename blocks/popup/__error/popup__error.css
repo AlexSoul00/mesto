@@ -1,5 +1,5 @@
 .popup__error {
-  display: none;
+  opacity: 0;
   color: #FF0000;
   min-height: 30px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
