@@ -85,7 +85,7 @@ const handleCardSubmit = e => {
   const linkValue = cardlinkFieldElement.value
   addCard(nameValue, linkValue);
   closePopup(popupAddCard);
-  const buttonElement = formElementAddCard.querySelector('.popup__button')
+  const buttonElement = formElementAddCard.querySelector('.popup__button');
   setDisableButton(buttonElement);
 };
 
