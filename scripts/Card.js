@@ -1,10 +1,9 @@
-import {openPopupImage} from './utils.js';
-
 class Card {
-  constructor(config, name, link){
+  constructor(config, name, link, handleCardClick){
     this._config = config;
     this._name = name;
     this._link = link; 
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate(){
@@ -14,19 +13,29 @@ class Card {
     .cloneNode(true);
   }
 
+  createCard(){
+    this._view = this._getTemplate();
+    this._cardText = this._view.querySelector(this._config.cardText)
+    this._cardImage = this._view.querySelector(this._config.cardPhoto)
+    this._deleteButton = this._view.querySelector(this._config.buttonCardDelete)
+    this._likeButton = this._view.querySelector(this._config.buttonCardLike)
+    this._cardText.textContent = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._addEventListeners();
+    return this._view;
+  }
+
   _addEventListeners(){
-    this._view.querySelector(this._config.buttonCardDelete)
-    .addEventListener('click', (evt) => {
+    this._deleteButton.addEventListener('click', (evt) => {
       this._deleteCard(evt);
     })
-    this._view.querySelector(this._config.buttonCardLike)
-    .addEventListener('click', () => {
+    this._likeButton.addEventListener('click', () => {
       this._likeCard();
     })
-    this._view.querySelector(this._config.cardPhoto)
-    .addEventListener('click', (evt) => {
-      openPopupImage(this._name, this._link)
-    })
+    this._cardImage.addEventListener('click', () => {
+      this._handleCardClick(this._name, this._link);
+    });
   }
 
   _deleteCard(evt){
@@ -35,19 +44,7 @@ class Card {
   }
 
   _likeCard(){
-    this._view.querySelector(this._config.buttonCardLike)
-    .classList.toggle('cards__button-like_aktive');
-  }
-
-  createCard(){
-    this._view = this._getTemplate();
-    const cardText = this._view.querySelector(this._config.cardText)
-    const cardPhoto = this._view.querySelector(this._config.cardPhoto)
-    cardText.textContent = this._name;
-    cardPhoto.src = this._link;
-    cardPhoto.alt = this._name;
-    this._addEventListeners();
-    return this._view;
+    this._likeButton.classList.toggle('cards__button-like_aktive');
   }
 };
 

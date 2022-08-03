@@ -1,14 +1,4 @@
 const popupImage = document.querySelector('.popup_type_img-increase')
-const popupImg = popupImage.querySelector('.popup__big-image')
-const popupText = popupImage.querySelector('.popup__image-text')
-const formElementAddCard = document.querySelector('.popup__form_type_addcard')
-
-function openPopupImage(name, link) { 
-  popupImg.src = link; 
-  popupText.textContent = name; 
-  popupImg.alt = name; 
-  openPopup (popupImage) 
-}  
 
 function openPopup(popupElement) {
   popupElement.classList.add('popup_opened')
@@ -19,7 +9,6 @@ function openPopup(popupElement) {
 function handleOverlay(evt) {
   if (evt.target.classList.contains('popup')) {
     closePopup(evt.target);
-    formElementAddCard.reset();
   }
 };
 
@@ -36,4 +25,4 @@ function closePopup(popupElement) {
   document.removeEventListener('keydown', handlerEscButton)
 };
 
-export {openPopupImage, openPopup, closePopup, popupImage}
+export {openPopup, closePopup, popupImage}
