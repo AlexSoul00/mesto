@@ -22,7 +22,10 @@ const getCard = (name, link) => {
   } 
 
 const userInfo = new UserInfo('.profile-info__username', '.profile-info__bio')
+
 const popupImage = new PopupWithImage('.popup_type_img-increase');
+popupImage.setEventListeners();
+
 const popupProfile = new PopupWithForm('.popup_type_profile', {
   handleFormSubmit:
   (data) => {userInfo.setUserInfo(data.name, data.about)}

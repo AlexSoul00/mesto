@@ -7,7 +7,7 @@ class Popup {
   }
 
   setEventListeners(){
-    document.addEventListener('mousedown', (e) => {
+    this._popupElement.addEventListener('mousedown', (e) => {
       this._handleOverlay(e)})
       this._popupCloseButton.addEventListener ('click', () => {
       this.close()})
