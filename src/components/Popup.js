@@ -3,32 +3,24 @@ class Popup {
     this._popupSelector = popupSelector;
     this._popupElement = document.querySelector(popupSelector);
     this._popupCloseButton = this._popupElement.querySelector('.popup__close-button');
+    this._handleEscClose = this._handleEscClose.bind(this)
   }
 
   setEventListeners(){
     document.addEventListener('mousedown', (e) => {
       this._handleOverlay(e)})
-    document.addEventListener('keydown', (e) => {
-      this._handlerEscButton(e)})
       this._popupCloseButton.addEventListener ('click', () => {
       this.close()})
     } 
 
-  _removeEventListeners(){
-    this._popupElement.removeEventListener('mousedown', (e) => {
-      this._handleOverlay(e)})
-    document.removeEventListener('keydown', (e) => {
-      this._handlerEscButton(e)})
-  }
-
   open(){
     this._popupElement.classList.add('popup_opened')
-    this.setEventListeners();
+    document.addEventListener('keydown', this._handleEscClose);
   }
 
   close(){
     this._popupElement.classList.remove('popup_opened')
-    this._removeEventListeners();
+    document.removeEventListener('keydown', this._handleEscClose);
   }
 
   _handleOverlay(e) {
@@ -37,7 +29,7 @@ class Popup {
     }
   }
 
-  _handlerEscButton(e) {
+  _handleEscClose(e) {
     if (e.key === 'Escape') {
       this.close();
     }

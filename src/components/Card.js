@@ -38,9 +38,9 @@ class Card {
     });
   }
 
-  _deleteCard(evt){
-    evt.preventDefault();
+  _deleteCard(){
     this._view.remove();
+    this._view = null;
   }
 
   _likeCard(){

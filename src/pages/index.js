@@ -27,10 +27,13 @@ const popupProfile = new PopupWithForm('.popup_type_profile', {
   handleFormSubmit:
   (data) => {userInfo.setUserInfo(data.name, data.about)}
 });
+popupProfile.setEventListeners();
+
 const popupAddCard = new PopupWithForm('.popup_type_addcard', {
   handleFormSubmit:
-  (data) => {addCard(data.name, data.link)}
+  (data) => {addCard(data.title, data.link)}
 });
+popupAddCard.setEventListeners();
 
 const addCardValidator = new FormValidator(config, formElementAddCard);
 addCardValidator.enableValidation(formElementAddCard);
@@ -49,7 +52,7 @@ const cardsContainer = new Section({
 buttonEdit.addEventListener('click', function() {
   const data = userInfo.getUserInfo();
   usernameFieldElement.value = data.name;
-  bioFieldElement.value = data.bio;2
+  bioFieldElement.value = data.bio;
   popupProfile.open();
   profileValidator.resetValidation();
 });
