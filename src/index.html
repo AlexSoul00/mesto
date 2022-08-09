@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="root">
   <div class="page">
@@ -13,7 +12,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img src="./images/Avatar.png" alt="аватар" class="profile__avatar">
+        <img src=<%=require("./images/Avatar.png")%> alt="аватар" class="profile__avatar">
         <div class="profile-info">
           <h1 class="profile-info__username">Жак-Ив Кусто</h1>
           <button type="button" class="profile-info__edit-button"></button>
@@ -77,6 +76,5 @@
       </figure>
     </li>
   </template>
-  <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
