@@ -59,7 +59,7 @@ class FormValidator {
     };
 
   enableValidation(){ 
-    this._addEventListeners(this._popupFormElement); 
+    this._addEventListeners(); 
   }
 
   resetValidation() {
