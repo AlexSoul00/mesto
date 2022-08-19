@@ -1,28 +1,31 @@
 import {Popup} from "./Popup";
 
 class PopupConfirm extends Popup {
-  constructor (popupSelector, { submit }){
-    super(popupSelector);
-    this._submit = submit;
-    this._popupElement = document.querySelector(this._popupSelector);
-    this._form= this._popupElement.querySelector('.form');
-    this._submitHandler = this._submitHandler.bind(this);
-  }
+constructor(popupSelector, {handleSubmit}) {
+  super(popupSelector);
+  this._handleSubmit = handleSubmit;
+  this._setEvent = this._setEvent.bind(this);
+}
 
-  open(){
-    super.open;
-  }
+handleSubmitConfirm(submitConfirm) {
+  this._handleSubmit = submitConfirm;
+}
 
-  _submitHandler(evt) {
-    evt.preventDefault();
-    this._submit(this._data);
-    this._form.removeEventListener('submit', this._submitHandler);
-  }
+_setEvent(evt) {
+  evt.preventDefault();
+  this._handleSubmit();
+}
 
-  setEventListeners() {
-    this._form.addEventListener('submit', this._submitHandler);
-    super.setEventListeners();
-  }
+open() {
+  this._popupElement.addEventListener('submit', this._setEvent);
+  super.open();
+}
+
+close() {
+  this._popupElement.removeEventListener('submit', this._setEvent);
+  super.close();
+}
+
 }
 
 export {PopupConfirm}

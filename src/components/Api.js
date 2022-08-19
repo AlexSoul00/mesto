@@ -1,9 +1,8 @@
 class Api {
-  constructor(host, token) {
+  constructor(host, headers) {
     this._host = host;
-    this._token = token;
+    this._headers = headers;
     this._getJsonOrError = this._getJsonOrError.bind(this);
-    this._getHeaders = this._getHeaders.bind(this);
   }
 
   _getJsonOrError(res){
@@ -13,16 +12,9 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  _getHeaders(){
-    return {
-      authorization: this._token,
-      'Content-Type': 'application/json'
-    }
-  }
-
   getInitialCards(){
     return fetch(`${this._host}/cards`, {
-      headers: this._getHeaders()
+      headers: this._headers
     })
     .then(this._getJsonOrError)
   }
@@ -30,23 +22,23 @@ class Api {
   createCard(name, link){
     return fetch(`${this._host}/cards`, {
       method: 'POST',
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({name, link})
     })
     .then(this._getJsonOrError)
   }
 
-  deleteCard(id){
-    return fetch(`${this._host}/cards/${id}`, {
+  deleteCard(data){
+    return fetch(`${this._host}/cards/${data._id}`, {
       method: 'DELETE',
-      headers: this._getHeaders()
+      headers: this._headers
     })
     .then(this._getJsonOrError)
   }
 
   getUser(){
     return fetch(`${this._host}/users/me`, {
-      headers: this._getHeaders()
+      headers: this._headers
     })
     .then(this._getJsonOrError)
   }
@@ -54,7 +46,7 @@ class Api {
   updateAvatar(avatar){
     return fetch(`${this._host}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({avatar})
     })
     .then(this._getJsonOrError)
@@ -63,7 +55,7 @@ class Api {
   updateProfile(name, about){
   return fetch(`${this._host}/users/me`, {
       method: 'PATCH',
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({name, about})
     })
     .then(this._getJsonOrError)
@@ -72,7 +64,7 @@ class Api {
   likeCard(id){
     return fetch(`${this._host}/cards/${id}/likes`, {
       method: 'PUT',
-      headers: this._getHeaders(),
+      headers: this._headers,
       body: JSON.stringify({id})
     })
     .then(this._getJsonOrError)
@@ -81,7 +73,7 @@ class Api {
   removeLikeCard(id){
     return fetch(`${this._host}/cards/${id}/likes`, {
       method: 'DELETE',
-      headers: this._getHeaders()
+      headers: this._headers
     })
     .then(this._getJsonOrError)
   }
@@ -91,6 +83,5 @@ class Api {
   }
 
 }
-
 
 export {Api};

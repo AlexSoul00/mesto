@@ -21,9 +21,7 @@ const config = {
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible',
-  token: '5aaa6758-f41e-4b2f-b957-f168a1ced472',
-  host: 'https://mesto.nomoreparties.co/v1/cohort-47'
+  errorClass: 'popup__error_visible'
 };
 const cardsList = config.cardsList;
 
