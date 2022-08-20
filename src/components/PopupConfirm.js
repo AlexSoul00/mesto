@@ -4,26 +4,19 @@ class PopupConfirm extends Popup {
 constructor(popupSelector, {handleSubmit}) {
   super(popupSelector);
   this._handleSubmit = handleSubmit;
-  this._setEvent = this._setEvent.bind(this);
+  this._form = this._popupElement.querySelector('.popup__form');
 }
 
 handleSubmitConfirm(submitConfirm) {
   this._handleSubmit = submitConfirm;
 }
 
-_setEvent(evt) {
-  evt.preventDefault();
-  this._handleSubmit();
-}
-
-open() {
-  this._popupElement.addEventListener('submit', this._setEvent);
-  super.open();
-}
-
-close() {
-  this._popupElement.removeEventListener('submit', this._setEvent);
-  super.close();
+setEventListeners(){
+  super.setEventListeners();
+  this._form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    this._handleSubmit();
+  })
 }
 
 }

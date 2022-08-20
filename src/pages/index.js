@@ -151,8 +151,9 @@ const avatarUpdateValidator = new FormValidator(config, formElementAvatar);
 avatarUpdateValidator.enableValidation(formElementAvatar)
 
 const cardsContainer = new Section({
-  renderer: (data) => {
-    const card = getCard(data);
+  items: [],
+  renderer: (items) => {
+    const card = getCard(items);
     cardsContainer.addItem(card);
   }}, cardsList );
 
@@ -162,7 +163,7 @@ api.getAllStartData()
   profileId = userData._id;
   userInfo.setUserInfo(userData.name, userData.about)
   userInfo.setAvatar(userData.avatar)
-  cardsContainer.setItimes(initialCards);
+  // console.log(initialCards)
   cardsContainer.renderItems(initialCards)
 })
 .catch((err) => {
